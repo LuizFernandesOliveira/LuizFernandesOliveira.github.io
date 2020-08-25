@@ -1,0 +1,29 @@
+body {
+    background: var(--color-bg);
+    color: var(--color-white)
+}
+
+.header{
+
+}
+
+img{
+    width: 200px;
+}
+
+.name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.description h2, .description p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.habilidade-item {
+    font-size: 1.2em;
+}
+
+:root {
+    --color-bg: #011d1f;
+    --color-white: #eae8f8;
+}
