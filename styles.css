@@ -31,14 +31,18 @@ h1.name {
 }
 
 .description{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.description img{
+    display: inline-block;
 }
 
 .description div {
     width: 400px;
     text-align: center;
+    display: inline-block;
 }
 
 .content{
