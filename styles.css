@@ -37,6 +37,15 @@ h1.name {
     justify-content: center;
 }
 
+.description div {
+    width: 400px;
+    text-align: center;
+}
+
+.content{
+    width: 100%;
+}
+
 
 .habilidade-item {
     font-size: 1.2em;
