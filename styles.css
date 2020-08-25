@@ -42,6 +42,18 @@ h1.name {
     font-size: 1.2em;
 }
 
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+footer div {
+    margin-right: 50px;
+}
+
 :root {
     --color-bg-site: #011d1f;
     --color-bg-img: #0ce5f5;
