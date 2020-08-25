@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
-    background: var(--color-bg-site);
-    color: var(--color-white);
+    background: #011d1f;
+    color: #eae8f8;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -15,12 +12,22 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
+    display: block;
+    margin: auto;
+}
+
+header, .content{
+    padding: 25vh 0;
+}
+
+.header, .section-content{
+    height: 50vh;
 }
 
 img.perfil{
     width: min(30vw, 20vh);
     padding: 5px;
-    background: var(--color-bg-img);
+    background: #0ce5f5;
     border-radius: 50%;
     margin-right: 40px;
 }
@@ -32,18 +39,35 @@ h1.name {
 }
 
 .description{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.description img{
+    display: inline-block;
 }
 
 .description div {
     width: 400px;
     text-align: center;
+    display: inline-block;
 }
+
+.description div p{
+    padding: 10px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
 
 .content{
     width: 100%;
+}
+
+.section-content h2{
+    background-color: #03484d;
+    padding: 3px 20px;
+    border-radius: 8px;
 }
 
 
@@ -53,19 +77,33 @@ h1.name {
 
 footer{
     width: 100%;
-    display: flex;
+    display: block;
+    text-align: center;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    border-top: 4px solid #0ce5f5;
+}
+
+nav ul {
     align-items: center;
-    justify-content: center;
-    padding: 50px 0;
+    border-radius: 8px;
 }
 
-footer div {
-    margin-right: 50px;
+nav li{
+    display: inline;
+    list-style-type: none;
+    padding: 2px 10px;
+    font-size: 20px;
 }
 
-:root {
-    --color-bg-site: #011d1f;
-    --color-bg-img: #0ce5f5;
-    --color-white: #eae8f8;
-    --color-border: #24edfc;
+nav li a {
+    text-decoration: none;
+    color: #0ce5f5;
+    text-transform: uppercase;
 }
