@@ -16,6 +16,14 @@ body {
     margin: auto;
 }
 
+header, .content{
+    padding: 30vh 0;
+}
+
+.header, .section-content{
+    height: 40vh;
+}
+
 img.perfil{
     width: min(30vw, 20vh);
     padding: 5px;
@@ -48,12 +56,15 @@ h1.name {
 .description div p{
     padding: 10px;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* NAV */
 nav {
     width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 20px;
 }
 
 nav ul {
