@@ -1,0 +1,51 @@
+body {
+    background: var(--color-bg-site);
+    color: var(--color-white);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+img.perfil{
+    width: min(30vw, 20vh);
+    padding: 5px;
+    background: var(--color-bg-img);
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+h1.name {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description h2, .description p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.habilidade-item {
+    font-size: 1.2em;
+}
+
+:root {
+    --color-bg-site: #011d1f;
+    --color-bg-img: #0ce5f5;
+    --color-white: #eae8f8;
+    --color-border: #24edfc;
+}

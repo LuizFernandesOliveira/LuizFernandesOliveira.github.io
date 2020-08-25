@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background: #dbcdc6;
-        }
-        #name {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        #description h2, #description p {
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
-        .habilidade-item {
-            font-size: 1.2em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <div id="container">
-
+    <div class="container">
         <header>
-            <img src="https://avatars3.githubusercontent.com/u/36059306?s=460&u=52e5a2d474b7b4ccebbe6661360c28f6d9b98014&v=4" alt="perfil" id="perfil" >
-            <h1 id="name">Luiz Fernandes de Oliveira</h1>
+            <div class="header">
+                <h1 id="name" class="name">Luiz Fernandes de Oliveira</h1>
+                
+
+                <div id="description" class="description">
+                    <img src="https://avatars3.githubusercontent.com/u/36059306?s=460&u=52e5a2d474b7b4ccebbe6661360c28f6d9b98014&v=4"
+                    alt="perfil" class="perfil">
+                    <div>
+                        <p>Brasileiro<br> 
+                            22 anos<br> 
+                            Canguaretama / RN</p>
+                    </div>
+                </div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#description">Sobre mim</a></li>
@@ -34,12 +34,7 @@
             </nav>
         </header>
         <main>
-            <div id="description">
-                <h2><strong>Sobre mim</strong></h2>
-                <p><strong>Nacionalidade: </strong> brasileiro</p>
-                <p><strong>Localizaao: </strong> Canguaretama / RN</p>
-            </div>
-            <div id="habilidades">
+            <div id="habilidades" class="habilidades">
                 <h2><strong>Habilidades</strong></h2>
                 <ul>
                     <li class="habilidade-item"><strong>Integridade</strong></li>
@@ -61,6 +56,7 @@
         </footer>
 
     </div>
-    
+
 </body>
+
 </html>
