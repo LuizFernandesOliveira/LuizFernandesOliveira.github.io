@@ -45,6 +45,30 @@ h1.name {
     display: inline-block;
 }
 
+.description div p{
+    padding: 10px;
+    line-height: 20px;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    
+}
+
+nav li{
+    display: inline;
+    list-style-type: none;
+    padding: 2px 5px;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
 .content{
     width: 100%;
 }
