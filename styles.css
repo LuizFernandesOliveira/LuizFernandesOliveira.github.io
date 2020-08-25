@@ -48,6 +48,7 @@ h1.name {
 .description div p{
     padding: 10px;
     line-height: 20px;
+    font-size: 18px;
 }
 
 /* NAV */
@@ -56,13 +57,15 @@ nav {
 }
 
 nav ul {
-    
+    align-items: center;
+    border-radius: 8px;
 }
 
 nav li{
     display: inline;
     list-style-type: none;
     padding: 2px 5px;
+    font-size: 20px;
 }
 
 nav li a {
