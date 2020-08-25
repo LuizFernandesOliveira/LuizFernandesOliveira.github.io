@@ -1,5 +1,5 @@
 body {
-    background: var(--color-bg);
+    background: var(--color-bg-site);
     color: var(--color-white)
 }
 
@@ -9,6 +9,8 @@ body {
 
 img{
     width: 150px;
+    padding: 5px;
+    background: var(--color-bg-img);
 }
 
 h1.name {
@@ -34,6 +36,7 @@ h1.name {
 }
 
 :root {
-    --color-bg: #011d1f;
+    --color-bg-site: #011d1f;
+    --color-bg-img: #0ce5f5;
     --color-white: #eae8f8;
 }
