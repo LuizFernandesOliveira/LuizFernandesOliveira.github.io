@@ -1,14 +1,17 @@
 body {
     background: var(--color-bg-site);
     color: var(--color-white);
-    width: 100vw;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
-.header{
-
+.container {
+    width: 100%;
+    max-width: 1200px;
 }
 
 img{
@@ -22,7 +25,7 @@ img{
 h1.name {
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -35,8 +38,6 @@ h1.name {
 .description h2, .description p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
-
 
 .habilidade-item {
     font-size: 1.2em;
