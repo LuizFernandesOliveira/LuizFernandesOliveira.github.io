@@ -14,7 +14,7 @@ body {
     max-width: 1200px;
 }
 
-img{
+img.perfil{
     width: min(30vw, 20vh);
     padding: 5px;
     background: var(--color-bg-img);
