@@ -11,6 +11,7 @@ img{
     width: 150px;
     padding: 5px;
     background: var(--color-bg-img);
+    margin-right: 40px;
 }
 
 h1.name {
