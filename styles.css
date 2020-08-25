@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
     background: var(--color-bg-site);
     color: var(--color-white);
@@ -7,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
