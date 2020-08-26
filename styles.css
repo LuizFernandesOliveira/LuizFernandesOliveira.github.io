@@ -18,11 +18,11 @@ body {
 }
 
 header, .content{
-    padding: 25vh 0;
+    padding: 20vh 0;
 }
 
 .header, .section-content{
-    height: 50vh;
+    height: 60vh;
 }
 
 img.perfil{
