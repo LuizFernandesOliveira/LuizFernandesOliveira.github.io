@@ -8,6 +8,15 @@ body {
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    padding: 10px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
 }
 
 .container {
@@ -18,11 +27,11 @@ body {
 }
 
 header, .content{
-    padding: 25vh 0;
+    padding: 20vh 0;
 }
 
 .header, .section-content{
-    height: 50vh;
+    height: 60vh;
 }
 
 img.perfil{

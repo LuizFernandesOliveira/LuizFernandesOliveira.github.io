@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+body { 
+    background: rgb(253 , 251 , 251);
+    font-family:  Roboto,  sans-serif;
+    font-size:  18px;
+    margin: 0;
+    padding:    0;
+    width:  100%;
+}
+
+.container {
+    width:  100%;
+    margin: auto;
+}
+
+
+/* header */
+
+.barra {
+    position:   fixed;
+    top:    0;
+    left:   0;
+    width:  100%;
+    text-align: center;
+    background: rgb(16 , 51 , 48);
+    color:  whitesmoke;
+}
+
+.barra nav {
+    width:  100%;
+    text-align: start;
+}
+
+.barra nav ul {
+    list-style-type:    none;
+}
+
+.barra nav ul li {
+    display:    inline-block;
+    line-height:    10px;
+}
+
+.barra nav ul li+li {
+    margin-left:    15px;
+}
+
+.barra nav ul li a {
+    text-decoration: none;
+    padding:    4px 10px;
+    border-radius:  5px;
+}
+
+.barra nav ul li a:hover {
+    border: 1px solid black;
+}
+
+.barra nav ul li a:checked ,
+.barra nav ul li a:active ,
+.barra nav ul li a:defined {
+    color:  whitesmoke;
+}
+
+
+/* .barra end */
+
+
+.licoes {
+    margin-top: 120px;
+    background: rgb(185 , 221 , 226);
+    border-bottom: 3px solid rgb(16 , 51 , 48);
+    padding: 20px 0;
+}
+
+.licoes h2{
+    width: 100%;
+    text-align: center;
+    color: rgb(17 , 16 , 16);
+}
+
+.licoes table {
+    width: 500px;
+    margin: auto;
+    border: 1px solid gray;
+    background: rgb(16 , 51 , 48);
+    border-radius: 10px;
+}
+
+.licoes table tr th {
+    border-bottom: 1px solid gray;
+    color: whitesmoke;
+    padding: 5px 0;
+}
+.licoes table tr th + th,  .licoes table tr td + td{
+    border-left: 1px solid gray;
+}
+.licoes table tr td {
+    color: whitesmoke;
+}
+/* .my_articles */
+
+.my_articles {
+    background-color: rgb(185 , 221 , 226);
+    color:  rgb(17 , 16 , 16);
+    padding: 10px 10vw;
+    float: left;
+}
+.my_articles h2 {
+    width: 100%;
+    text-align: center;
+    color: rgb(17 , 16 , 16);
+}
+
+.my_articles .lado-esquerdo {
+    width:  80%;
+    float:  left;
+    text-indent: 50px;
+}
+
+.my_articles .lado-esquerdo p{
+    margin: 0 20px 0 10px;
+    padding: 10px;
+    text-align: justify;
+    font-style: italic;
+    border-top: 3px solid rgb(16 , 51 , 48);
+}
+
+.my_articles .lado-direito p {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    border-top: 3px solid rgb(16 , 51 , 48);
+}
+
+.my_articles .lado-direito {
+    float:  right;
+    width:  20%;
+    background: nter;
+    background: rgb(16 , 51 , 48);
+    border-radius: 10px;
+    color:  whitesmoke;
+}
+
+.my_articles .my_article_header {
+    text-align: right;
+    padding: 0 30px;
+}
+
+.my_articles .my_article_header img {
+    width:  min(10vw , 15vh);
+    border-radius:  50%;
+}
+
+
+/* .my_article end */
+
+footer {
+    clear:  both;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(16 , 51 , 48);
+    text-align: center;
+    color: whitesmoke;
+    height: 150px;
+}
+
+footer p {
+    padding: 10px 0;
+}
+footer p:first-child{
+    padding-top: 20px;
+}
+
+footer a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+}
