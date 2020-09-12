@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memes generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>My Trybe Meme Generator</h1>
+    </header>
+    <div class="content">
+      <div class="content-center">
+        <div class="text-image-select">
+          <label for="#text-input">Texto: </label>
+          <input type="text" id="text-input" class="text-input" maxlength="60">
+
+          <label for="meme-insert" class="image">upload image</label>
+          <input type="file" accept="image/*" onchange="loadFile(event)" id="meme-insert" class="meme-input">
+        </div>
+
+        <div id="meme-image-container" class="meme-image-container">
+          <img id="meme-image" class="meme-image" src="" alt="meme">
+          <p id="meme-text" class="meme-text"></p>
+        </div>
+      </div>
+
+      <div class="content-right">
+        <h3>Bordas Customizadas</h3>
+        <button type="button" id="default" class="btn-border default">default</button>
+        <button type="button" id="fire" class="btn-border fire">fire</button>
+        <button type="button" id="water" class="btn-border water">water</button>
+        <button type="button" id="earth" class="btn-border earth">earth</button>
+      </div>
+
+      <div class="content-left">
+        <h3>Memes pré-prontos</h3>
+        <img src="imgs/meme1.png" id="meme-1" alt="meme 1" class="img-pronto">
+        <img src="imgs/meme2.png" id="meme-2" alt="meme 2" class="img-pronto">
+        <img src="imgs/meme3.png" id="meme-3" alt="meme 3" class="img-pronto">
+        <img src="imgs/meme4.png" id="meme-4" alt="meme 4" class="img-pronto">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
