@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+body {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  color: rgb(75, 74, 74);
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+.container {
+  background-color: rgb(234, 240, 240);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-areas: 'content-left content-center content-right';
+}
+
+header {
+  width: 100%;
+  border-bottom: 4px solid gray;
+  text-align: center;
+}
+
+.content-right, .content-left {
+  max-width: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+.content-left {
+  grid-area: content-left;
+}
+
+.content-right {
+  grid-area: content-right;
+}
+
+.content-center {
+  grid-area: content-center;
+}
+
+.text-image-select {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  height: 50px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.image {
+  box-shadow: 0 0 5px 0.4px rgb(87, 86, 86);
+  padding: 10px;
+}
+
+.meme-input {
+  display: none;
+}
+
+.meme-image-container {
+  background-color: white;
+  border: 1px solid black;
+  height: 400px;
+  position: relative;
+  width: 400px;
+}
+
+.text-input {
+  line-height: 20px;
+  max-width: 200px;
+  width: 100%;
+}
+
+.meme-image {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.meme-text {
+  text-align: center;
+  bottom: 0;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  text-shadow: black 5px 5px 5px;
+  width: 100%;
+  z-index: 10;
+}
+
+.btn-border {
+  color: white;
+  font-weight: 900;
+  line-height: 30px;
+  width: 100px;
+}
+
+.default {
+  background-color: black;
+}
+
+.fire {
+  background-color: red;
+}
+
+.water {
+  background-color: blue;
+}
+
+.earth {
+  background-color: green;
+}
+
+.img-pronto {
+  height: 100px;
+}
+
+@media(max-width: 700px){
+  .content {
+    grid-template-areas: 
+    'content-center'
+    'content-right'
+    'content-left';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-right, .content-left {
+    max-width: 400px;
+  }
+}
