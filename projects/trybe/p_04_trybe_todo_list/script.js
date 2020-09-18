@@ -44,6 +44,11 @@ function removeLi(li) {
   ols.removeChild(li.parentNode);
 }
 
+function deleteTodo(event) {
+  let li = event.target.parentNode;
+  removeLi(li);
+}
+
 function upTodo(event) {
   let myOl = event.target.parentNode.parentNode.parentNode;
   let myDivForUp = event.target.parentNode.parentNode;
@@ -76,11 +81,40 @@ function downTodo(event) {
   todoList.splice(index, 1);
 }
 
+function insertPropertyInElement({ element = '', text = '', textHTML = '', classe = '', identify = '' }) {
+  if (element) {
+    let myElement = element;
+    if (text) myElement.innerText = text;
+    if (textHTML) myElement.innerHTML = textHTML;
+    if (classe) myElement.classList.add(classe);
+    if (identify) myElement.id = identify;
+  }
+}
+
+// insere evento em botao delete
+function insertBtnDelete() {
+  let btn = createBtn();
+  insertPropertyInElement({
+    element: btn,
+    textHTML: 'delete',
+    classe: 'btn-delete',
+    identify: 'btn-delete',
+  });
+  btn.addEventListener('click', function (event) {
+    deleteTodo(event);
+  });
+  return btn;
+}
+
 // insere evento em botao up
 function insertBtnUp() {
   let btn = createBtn();
-  btn.innerHTML = 'up &uarr;';
-  btn.id = 'mover-cima';
+  insertPropertyInElement({
+    element: btn, 
+    textHTML: 'up &uarr;',
+    classe: 'mover-cima',
+    identify: 'mover-cima',
+  });
   btn.addEventListener('click', function (event) {
     upTodo(event);
   });
@@ -90,35 +124,20 @@ function insertBtnUp() {
 // insere event em botao down
 function insertBtnDown() {
   let btn = createBtn();
-  btn.innerHTML = 'down &darr;';
-  btn.id = 'mover-baixo';
+  insertPropertyInElement({
+    element: btn, 
+    textHTML: 'down &darr;', 
+    classe: 'mover-baixo', 
+    identify: 'mover-baixo',
+  });
   btn.addEventListener('click', function (event) {
     downTodo(event);
   });
   return btn;
 }
 
-function insertPropertyInElement({ element = '', text = '', classe = '' }) {
-  if (element) {
-    let myElement = element;
-    if (text) myElement.innerText = text;
-    if (classe) myElement.classList.add(classe);
-  }
-}
-
 // armazena o li que foi splitado
 let liCurrentSplited;
-
-// adicionando evento de click no li
-function eventLiClick(li) {
-  li.addEventListener('click', function (event) {
-    event.target.classList.add('selected');
-
-    if (liCurrentSplited) liCurrentSplited.classList.remove('selected');
-
-    liCurrentSplited = li;
-  });
-}
 
 // adicionando evendo de double click no li
 function eventLiDblClick(li) {
@@ -127,25 +146,21 @@ function eventLiDblClick(li) {
     let lis = getLiAll();
     for (let index = 0; index < lis.length; index += 1) {
       if (lis[index].className == 'completed') todoList[index].classes = 'completed';
+      else todoList[index].classes = '';
     }
   });
 }
 
-// adicionando eventos no li
-function addEventSplitLi(li) {
-  eventLiClick(li);
-
-  eventLiDblClick(li);
-}
-
-function insertBtnUpDown() {
+function insertButtonsInLi() {
   let btnUp = insertBtnUp();
   let btnDown = insertBtnDown();
+  let btnDelete = insertBtnDelete();
   let divForButton = createDiv();
 
   divForButton.className = 'item-button';
   divForButton.appendChild(btnUp);
   divForButton.appendChild(btnDown);
+  divForButton.appendChild(btnDelete);
 
   return divForButton;
 }
@@ -157,10 +172,10 @@ function insertLiInOl(text, classe) {
   let ol = getOl();
   let li = createLi();
 
-  let divForButton = insertBtnUpDown();
+  let divForButton = insertButtonsInLi();
 
   insertPropertyInElement({ text: text, element: li, classe: classe });
-  addEventSplitLi(li);
+  eventLiDblClick(li);
 
   divForLi.appendChild(li);
   divForLi.appendChild(divForButton);
@@ -182,10 +197,15 @@ btnAdd.addEventListener('click', function () {
 // remove finalizados
 let btnRemoveFinalized = getBtnRemoveFinalized();
 btnRemoveFinalized.addEventListener('click', function () {
-  let li = getLiCompleted();
+  let li = getLiAll();
+  console.log(li)
   for (let index = 0; index < li.length; index += 1) {
-    if (li[index].className == 'completed') removeLi(li[index]);
+    if (li[index].className == 'completed') {
+      removeLi(li[index]);
+      todoList.splice(index - 1, 1);
+    }
   }
+  console.log(todoList)
 });
 
 // remove todos
@@ -193,26 +213,17 @@ const btnRemoveAll = getBtnRemoveAll();
 btnRemoveAll.addEventListener('click', function () {
   let ol = getOl();
   ol.innerHTML = '';
+  todoList = [];
 });
 
 // save storage
 const btnSave = getBtnSave();
 btnSave.addEventListener('click', function () {
-  if (todoList) storageTodoList.insert(todoList);
-});
-
-const btnRemoveSelected = getBtnRemoveSelected();
-btnRemoveSelected.addEventListener('click', function () {
-  let selected = document.getElementsByClassName('selected')[0];
-
-  if (selected) {
-    removeLi(selected);
-    todoList = [];
-  }
+  storageTodoList.insert(todoList);
 });
 
 window.onload = function () {
-  let todoList = storageTodoList.index();
+  todoList = storageTodoList.index();
 
   if (todoList) {
     for (let index = 0; index < todoList.length; index += 1) {
