@@ -36,14 +36,14 @@ header {
 }
 
 input {
-  line-height: 20px;
+  line-height: 25px;
   max-width: 500px;
   width: 100%;
   border-radius: 10px;
 }
 
 button {
-  line-height: 20px;
+  line-height: 25px;
   border-radius: 10px;
   font-weight: 700;
 }
@@ -60,7 +60,10 @@ button {
 }
 
 .completed {
-  text-decoration: line-through solid rgb(0, 0, 0);
+  background-image: url('image/finalized.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 50px;
 }
 
 .selected {
@@ -112,7 +115,7 @@ li {
 
 .item-button {
   display: flex;
-  width: 200px;
+  width: 300px;
   align-items: center;
   justify-content: space-around;
 }
@@ -122,11 +125,15 @@ li {
   color: white;
 }
 
-.item-button button:first-child {
+.mover-cima {
   background-color: rgb(11, 124, 11);
 }
 
-.item-button button:last-child {
+.btn-delete {
+  background-color: rgb(218, 9, 9);
+} 
+
+.mover-baixo {
   background-color: rgb(189, 45, 105);
 }
 
@@ -135,13 +142,12 @@ li {
   color: white;
 }
 
-.remover-selecionado {
-  background-color: gray;
-  color: white;
-}
-
 .remover-finalizados {
-  text-decoration: line-through solid rgb(0, 0, 0);
+  background-image: url('image/finalized.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 30px;
 }
 
 .salvar-tarefas {
