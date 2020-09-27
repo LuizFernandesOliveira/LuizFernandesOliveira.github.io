@@ -82,7 +82,6 @@
 @media(min-width: 720px) {
   .content-project {
     align-items: flex-start;
-    flex-direction: row;
   }
 
   .projects {
@@ -91,7 +90,7 @@
 
   .project-group {
     max-width: unset;
-    width: 600px;
+    width: 1200px;
   }
 
   .project-group + .project-group {
@@ -104,7 +103,7 @@
     box-sizing: border-box;
     flex-direction: column;
     padding: 10px;
-    width: 50%;
+    width: 25%;
   }
 
   .project-item + .project-item {
