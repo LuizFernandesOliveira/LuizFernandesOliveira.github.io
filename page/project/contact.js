@@ -25,6 +25,11 @@ const projects = [
       link: '../../projects/trybe/p_05_trybe_cloneUI_facebook/index.html',
       image: '../../projects/trybe/p_05_trybe_cloneUI_facebook/facebook.png',
     },
+    {
+      title: 'My Tryber Shopping Cart',
+      link: '../../projects/trybe/p_06_trybe_shopping-cart/index.html',
+      image: '../../projects/trybe/p_06_trybe_shopping-cart/shopping-cart.png',
+    }
   ],
   []
 ];
