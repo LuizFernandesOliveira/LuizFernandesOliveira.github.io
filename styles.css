@@ -351,6 +351,93 @@ img {
   letter-spacing: 0.08em;
 }
 
+/* ===== TIMELINE ===== */
+.timeline {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.timeline-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.timeline-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot--active {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.timeline-period {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-body h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-company {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 /* ===== SKILLS ===== */
 #skills {
   padding: 6rem 0;

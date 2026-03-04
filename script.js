@@ -1,9 +1,10 @@
 // ===== TYPING ANIMATION =====
 const typingText = document.getElementById('typing-text');
 const phrases = [
-  'Desenvolvedor Full-Stack',
-  'Entusiasta em InfoSec',
-  'Estudante na Trybe',
+  'Engenheiro Full-Stack',
+  'Backend com Java & Spring Boot',
+  'Cloud AWS · Terraform',
+  'Explorando Inteligência Artificial',
 ];
 
 let phraseIndex = 0;
