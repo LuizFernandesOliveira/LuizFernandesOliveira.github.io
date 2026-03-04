@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Todo List</title>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>My Tryber Todo List</h1>
-    </header>
-    <div class="content">
-      <p id="funcionamento" class="funcionamento">1) Clique duas vezes em um item para marcá-lo como completo</p>
-      <p id="funcionamento2" class="funcionamento">2) Clique uma vez em um item para selecioná-lo</p>
-      <div class="add">
-        <input type="text" id="texto-tarefa">
-        <button type="button" id="criar-tarefa" class="criar-tarefa">Adicionar</button>
+  <div class="app">
+    <div class="card">
+
+      <header class="card-header">
+        <div class="card-header-icon">✓</div>
+        <div>
+          <h1>Todo List</h1>
+          <p class="subtitle">Organize suas tarefas do dia</p>
+        </div>
+      </header>
+
+      <div class="input-row">
+        <input type="text" id="texto-tarefa" placeholder="Adicionar nova tarefa..." autocomplete="off">
+        <button type="button" id="criar-tarefa" class="criar-tarefa" title="Adicionar tarefa">+</button>
       </div>
-      
+
       <ol id="lista-tarefas"></ol>
-      
-      <div class="setting">
-        <button type="button" id="salvar-tarefas" class="salvar-tarefas">salvar alterações</button>
-        
-        <button type="button" id="apaga-tudo" class="apaga-tudo">limpar lista</button>
-        <button type="button" id="remover-finalizados" class="remover-finalizados">remover completos</button>
+
+      <div class="hint">
+        <span>💡 Duplo clique em um item para marcá-lo como concluído</span>
       </div>
+
+      <div class="setting">
+        <button type="button" id="salvar-tarefas"      class="salvar-tarefas">Salvar</button>
+        <button type="button" id="remover-finalizados" class="remover-finalizados">Remover concluídos</button>
+        <button type="button" id="apaga-tudo"          class="apaga-tudo">Limpar tudo</button>
+      </div>
+
     </div>
   </div>
 

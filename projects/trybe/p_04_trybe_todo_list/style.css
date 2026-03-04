@@ -1,156 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+/* ===== TOKENS ===== */
+:root {
+  --bg:         #060c16;
+  --surface:    #112034;
+  --surface-2:  #0d1b2a;
+  --accent:     #06b6d4;
+  --accent-dim: rgba(6, 182, 212, 0.12);
+  --text:       #e2e8f0;
+  --text-muted: #8896a5;
+  --border:     rgba(255, 255, 255, 0.07);
+  --danger:     #ef4444;
+  --success:    #22c55e;
+  --warning:    #f59e0b;
+}
 
-body {
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 0;
-  background-color: rgb(173, 195, 228);
-  font-family: Roboto, sans-serif;
 }
 
-.container {
-  width: 100%;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-header {
+/* ===== APP SHELL ===== */
+.app {
   width: 100%;
-  text-align: center;
-  background-color: rgb(135, 170, 223);
+  max-width: 580px;
 }
 
-.content {
-  align-items: center;
-  background-color: whitesmoke;
-  border-radius: 20px;
-  box-sizing: border-box;
-  color: rgb(73, 71, 71);
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== HEADER ===== */
+.card-header {
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  padding-bottom: 20px;
-  max-width: 720px;
-  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--border);
 }
 
-input {
-  line-height: 25px;
-  max-width: 500px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-button {
-  line-height: 25px;
-  border-radius: 10px;
+.card-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--accent);
+  font-size: 1.25rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+/* ===== INPUT ROW ===== */
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+input[type="text"] {
+  flex: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.625rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]::placeholder { color: var(--text-muted); }
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
 }
 
 .criar-tarefa {
-  width: 100%;
-  max-width: 100px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 42px;
+  height: 42px;
+  line-height: 1;
+  transition: background 0.2s, transform 0.1s;
+  flex-shrink: 0;
 }
 
-.add {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+.criar-tarefa:hover {
+  background: #0891b2;
+  transform: scale(1.06);
 }
 
-.completed {
-  background-image: url('image/finalized.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-left: 50px;
+.criar-tarefa:active { transform: scale(0.97); }
+
+/* ===== LIST ===== */
+#lista-tarefas {
+  list-style: none;
+  min-height: 56px;
+  padding: 0;
 }
 
-.selected {
-  background-color: rgb(128, 128, 128);
-}
-
-.funcionamento {
-  font-weight: 700;
-  align-self: flex-start;
-  margin-left: 20px;
-  margin-top: 0;
-}
-
-.funcionamento:first-child {
-  margin-top: 20px;
-}
-
-.funcionamento:last-child {
-  margin-top: 0;
-}
-
-ol {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+#lista-tarefas:empty::after {
+  content: 'Nenhuma tarefa ainda — adicione uma acima!';
+  display: block;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
 .todo-list-item {
   align-items: center;
-  border-top: 1px solid gray;
+  border-bottom: 1px solid var(--border);
   display: flex;
-  justify-content: space-between;
-  margin: 0 10px;
-  padding: 2px 0;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem 0.8rem 2rem;
+  transition: background 0.15s;
 }
 
-.todo-list-item:last-child  {
-  border-bottom: 1px solid gray;
-}
+.todo-list-item:hover { background: rgba(255, 255, 255, 0.02); }
+
+.todo-list-item:last-child { border-bottom: none; }
 
 li {
-  width: 100%;
-  line-height: 30px;
-  list-style-position: inside;
-  border-radius: 10px;
-  padding: 0 10px;
+  cursor: default;
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  user-select: none;
+  transition: color 0.25s, opacity 0.25s, text-decoration 0.25s;
 }
 
+li.completed {
+  color: var(--text-muted);
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+li.selected { color: var(--accent); }
+
+/* ===== ITEM BUTTONS ===== */
 .item-button {
   display: flex;
-  width: 300px;
-  align-items: center;
-  justify-content: space-around;
+  gap: 0.3rem;
+  flex-shrink: 0;
 }
 
 .item-button button {
-  font-weight: 700;
-  color: white;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  height: 28px;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  width: 28px;
 }
 
-.mover-cima {
-  background-color: rgb(11, 124, 11);
+.mover-cima:hover {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: var(--success);
+  color: var(--success);
 }
 
-.btn-delete {
-  background-color: rgb(218, 9, 9);
-} 
-
-.mover-baixo {
-  background-color: rgb(189, 45, 105);
+.mover-baixo:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: var(--warning);
+  color: var(--warning);
 }
 
-.apaga-tudo {
-  background-color: red;
-  color: white;
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
-.remover-finalizados {
-  background-image: url('image/finalized.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
-  padding-right: 30px;
+/* ===== HINT ===== */
+.hint {
+  padding: 0.6rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(6, 182, 212, 0.03);
+}
+
+.hint span {
+  color: var(--text-muted);
+  font-size: 0.775rem;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.setting {
+  display: flex;
+  gap: 0.6rem;
+  padding: 1.25rem 2rem;
+  flex-wrap: wrap;
+}
+
+.setting button {
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  transition: all 0.2s;
 }
 
 .salvar-tarefas {
-  background-color: rgb(0, 47, 255);
-  color: white;
+  background: var(--accent-dim);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--accent);
+}
+
+.salvar-tarefas:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.remover-finalizados {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: var(--success);
+}
+
+.remover-finalizados:hover { background: rgba(34, 197, 94, 0.18); }
+
+.apaga-tudo {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--danger);
+}
+
+.apaga-tudo:hover { background: rgba(239, 68, 68, 0.18); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .card-header { padding: 1.25rem 1.25rem; }
+  .input-row   { padding: 1rem 1.25rem; }
+  .todo-list-item { padding: 0.75rem 1rem 0.75rem 1.25rem; }
+  .setting     { padding: 1rem 1.25rem; }
+  .hint        { padding: 0.5rem 1.25rem; }
 }

@@ -96,7 +96,7 @@ function insertBtnDelete() {
   let btn = createBtn();
   insertPropertyInElement({
     element: btn,
-    textHTML: 'delete',
+    textHTML: '✕',
     classe: 'btn-delete',
     identify: 'btn-delete',
   });
@@ -111,7 +111,7 @@ function insertBtnUp() {
   let btn = createBtn();
   insertPropertyInElement({
     element: btn, 
-    textHTML: 'up &uarr;',
+    textHTML: '↑',
     classe: 'mover-cima',
     identify: 'mover-cima',
   });
@@ -126,7 +126,7 @@ function insertBtnDown() {
   let btn = createBtn();
   insertPropertyInElement({
     element: btn, 
-    textHTML: 'down &darr;', 
+    textHTML: '↓',
     classe: 'mover-baixo', 
     identify: 'mover-baixo',
   });
@@ -184,6 +184,10 @@ function insertLiInOl(text, classe) {
   todoList.push({ value: text, classes: '' });
 }
 
+document.getElementById('texto-tarefa').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') getBtnAdd().click();
+});
+
 let btnAdd = getBtnAdd();
 btnAdd.addEventListener('click', function () {
   let lis = getLiAll();
@@ -198,14 +202,12 @@ btnAdd.addEventListener('click', function () {
 let btnRemoveFinalized = getBtnRemoveFinalized();
 btnRemoveFinalized.addEventListener('click', function () {
   let li = getLiAll();
-  console.log(li)
   for (let index = 0; index < li.length; index += 1) {
     if (li[index].className == 'completed') {
       removeLi(li[index]);
       todoList.splice(index - 1, 1);
     }
   }
-  console.log(todoList)
 });
 
 // remove todos
